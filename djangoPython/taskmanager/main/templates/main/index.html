@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-4 fw-normal text-body-emphasis">Главная страница</h1>
+    <p class="fs-5 text-body-secondary">Здесь вы будете видеть объявления выступлений. Если Вы хотите подать заявку, перейдите во вкладку "подать анкету"</p>
+    {% if performance %}
+        {% for element in performance %}
+            <div class="alert alert-warning mt-2">
+                <h3>{{ element.dancer }}</h3>
+                <p>{{ element.style }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>Записей пока что нет!</p>
+    {% endif %}
+{% endblock %}

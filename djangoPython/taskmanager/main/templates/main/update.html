@@ -1,0 +1,19 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Обновить анкету
+{% endblock %}
+
+{% block content %}
+    <h1>Обновление модели</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="char_field">CharField:</label>
+        <input type="text" name="char_field" id="char_field" value="{{ model_instance.char_field }}">
+
+        <label for="text_field">TextField:</label>
+        <textarea name="text_field" id="text_field">{{ model_instance.text_field }}</textarea>
+
+        <input type="submit" value="Обновить">
+    </form>
+{% endblock %}

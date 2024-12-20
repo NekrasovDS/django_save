@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Подать анкету
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-4 fw-normal text-body-emphasis">Подать анкету</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.title}}<br>
+        {{form.task}}<br>
+        <button type="submit" class="btn btn-success">Сохранить</button>
+        <span>{{ error }}</span>
+    </form>
+     <p class="fs-5 text-body-secondary"></p>
+{% endblock %}

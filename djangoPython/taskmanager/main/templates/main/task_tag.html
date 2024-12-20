@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Введите task_id
+{% endblock %}
+
+{% block content %}
+    <h1 class="display-4 fw-normal text-body-emphasis">Введите индивидуальный ключ обращения</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{form.task_tag}}<br>
+        <button type="submit" class="btn btn-success">Найти обращение</button>
+        <span>{{ error }}</span>
+    </form>
+     <p class="fs-5 text-body-secondary"></p>
+{% endblock %}
